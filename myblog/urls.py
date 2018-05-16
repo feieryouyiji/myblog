@@ -17,13 +17,22 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+
+from tastypie.api import Api
+from django.conf import settings
+from app.api import BookResource
 import app.urls
 
-from django.conf import settings
+
+v1_api = Api(api_name='v1')
+
+v1_api.register(BookResource())
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(app.urls)),
+    url(r'^traditional/', include(app.urls)),  # 传统的 视图url 分发到app.url中
+    url(r'^api/', include(v1_api.urls)), # tastypie restful 
     url(r'^$', TemplateView.as_view(template_name="index.html")),
 ]
 if settings.DEBUG:

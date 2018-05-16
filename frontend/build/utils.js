@@ -122,6 +122,7 @@ exports.entries = function () {
     var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
     map[filename] = filePath
   })
+  console.log(entryFiles, 'entryFiles<===')
   return map
 }
 

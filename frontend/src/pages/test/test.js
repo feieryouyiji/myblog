@@ -3,7 +3,7 @@
 /* eslint-disable */
 // eslint-disable-next-line
 import Vue from 'vue'
-import App from './App'
+import Headers from './headers'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -17,6 +17,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  components: { Headers },
+  template: '<Headers/>'
 })

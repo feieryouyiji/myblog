@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'tastypie',
     'app',
 ]
 
@@ -155,3 +156,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# tastypie config
+API_LIMIT_PER_PAGE = 10
