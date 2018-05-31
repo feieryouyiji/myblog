@@ -3,9 +3,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/HelloWorld'
-import First from '@/components/first'
-import Two from '@/components/two'
-import Three from '@/components/three'
+import Tag from '@/components/Tag'
+import Category from '@/components/Category'
+import Article from '@/components/Article'
+import Book from '@/components/Book'
 
 Vue.use(Router)
 
@@ -18,19 +19,24 @@ export default new Router({
       component: Hello
     }
     ,{
-      path: '/first',
-      name: 'First',
-      component: First
+      path: '/tag',
+      name: 'Tag',
+      component: Tag
     }
     ,{
-      path: '/two',
-      name: 'Two',
-      component: Two
+      path: '/category',
+      name: 'Category',
+      component: Category
     }
     ,{
-      path: '/three',
-      name: 'Three',
-      component: Three
+      path: '/article',
+      name: 'Article',
+      component: Article
+    }
+    ,{
+      path: '/book',
+      name: 'Book',
+      component: Book
     }
     ,{
       path: '*',

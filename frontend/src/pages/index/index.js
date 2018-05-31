@@ -11,6 +11,12 @@ import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 Vue.use(ElementUI)
 
+import axios from 'axios'
+Vue.prototype.$axios=axios
+
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

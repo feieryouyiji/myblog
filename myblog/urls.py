@@ -20,13 +20,16 @@ from django.views.generic import TemplateView
 
 from tastypie.api import Api
 from django.conf import settings
-from app.api import BookResource
+from app.api import BookResource, TagResource, CategoryResource, ArticleResource
 import app.urls
 
 
 v1_api = Api(api_name='v1')
 
 v1_api.register(BookResource())
+v1_api.register(TagResource())
+v1_api.register(CategoryResource())
+v1_api.register(ArticleResource())
 
 
 urlpatterns = [

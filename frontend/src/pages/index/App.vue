@@ -2,14 +2,8 @@
   <div id="app">
 
     <!-- 顶部导航栏 -->
-    <el-menu
-      :default-active="activeIndex2"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b">
+    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64"
+      text-color="#fff" active-text-color="#ffd04b">
       <el-menu-item index="1">处理中心</el-menu-item>
       <el-submenu index="2">
         <template slot="title">我的工作台</template>
@@ -24,7 +18,9 @@
         </el-submenu>
       </el-submenu>
       <el-menu-item index="3" disabled>消息中心</el-menu-item>
-      <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+      <el-menu-item index="4">
+        <a href="https://www.ele.me" target="_blank">订单管理</a>
+      </el-menu-item>
     </el-menu>
 
     <!-- body轮播图 -->
@@ -39,11 +35,14 @@
     <div>开始路由</div>
     <router-link to="/">点击进入hello首页</router-link>
     <br>
-    <router-link to="/first">点击进入first</router-link>
+    <router-link to="/book">点击进入book</router-link>
     <br>
-    <router-link to="/two">点击进入two</router-link>
     <br>
-    <router-link to="/three">点击进入three</router-link>
+    <router-link to="/tag">点击进入tag</router-link>
+    <br>
+    <router-link to="/category">点击进入category</router-link>
+    <br>
+    <router-link to="/article">点击进入article</router-link>
     <br>
     <router-view></router-view>
 
@@ -52,20 +51,21 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      activeIndex: '1',
-      activeIndex2: '1'
-    }
-  },
-  methods: {
-    handleSelect (key, keyPath) {
-      console.log(key, keyPath)
+  export default {
+    name: 'app',
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      }
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath)
+      }
     }
   }
-}
+
 </script>
 
 <style>
@@ -84,4 +84,5 @@ export default {
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
+
 </style>

@@ -4,3 +4,6 @@ from django.contrib import admin
 from app.models import *
 
 admin.site.register(Book)
+admin.site.register(Tag)
+admin.site.register(Category)
+admin.site.register(Article)
