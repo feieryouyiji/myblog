@@ -15,7 +15,7 @@ class Author(models.Model):
         return self.name
 
 class Entry(models.Model):
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name="entries")
     headline = models.CharField(max_length=255)
     body_text = models.TextField()
     pub_date = models.DateField()
@@ -27,3 +27,8 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.headline
+
+
+class EntryDetail(models.Model):
+    entry = models.OneToOneField(Entry, on_delete=models.CASCADE)
+    details = models.TextField()
